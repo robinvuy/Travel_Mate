@@ -1,20 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useNavigate, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Home from "./components/Home"
 
   function App() {
     return (
-      <div>
-        <h1>Welcome to Travel Mate</h1>
-        <p> This will provide all you need for your travels:</p>
-        <ul> 
-          <li><a href="">Time and Date </a></li>
-          <li> Weather </li>
-          <li> Navigation and Maps </li>
-        </ul>
-      </div>
-      
+      <Routes>
+        <Route path="/" element={<Home />}  />
+      </Routes>
     );
+      
+
+
   }
 // function App() {
 //   return (
