@@ -18,6 +18,7 @@ const Clock = () => {
         <div>
             <h1>hi</h1>
             <p>time is: {datetime && datetime.slice(11,19)}</p>
+            <p>date is: {datetime && datetime.slice(0,10)}</p>
         </div>
     );
 }
