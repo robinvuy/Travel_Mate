@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const Clock = () => {
     const [data, setData] = useState([])
-    const datetime = data.datetime;
+    const dateTime = data.datetime;
+    const timeZone = data.timezone;
 
     useEffect(() => {
         fetch('http://worldtimeapi.org/api/timezone/Europe/London')
@@ -17,8 +18,14 @@ const Clock = () => {
     return (
         <div>
             <h1>hi</h1>
-            <p>time is: {datetime && datetime.slice(11,19)}</p>
-            <p>date is: {datetime && datetime.slice(0,10)}</p>
+            <label>
+                Enter Location: 
+                <input name ="userInput" defaultValue="hi"></input>
+            </label>
+            
+            <p>Chosen Timezone is: {timeZone && timeZone}</p>
+            <p>time is: {dateTime && dateTime.slice(11,19)}</p>
+            <p>date is: {dateTime && dateTime.slice(0,10)}</p>
         </div>
     );
 }
