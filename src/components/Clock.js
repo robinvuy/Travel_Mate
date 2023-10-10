@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from "react";
 
 const Clock = () => {
-    const [data, setData] = useState([])
-    const dateTime = data.datetime;
-    const timeZone = data.timezone;
+    const [info, setInfo] = useState([])
+    const dateTime = info.datetime;
+    const timeZone = info.timezone;
+    const URL = "http://worldtimeapi.org/api/timezone/Europe/London"
 
+    // useEffect(() => {
+    //     fetch(URL)
+    //         .then(response => response.json())
+    //         .then((json) => {
+    //             console.log(json);
+    //             setInfo(json);
+    //         })
+    // }, []);
+    
     useEffect(() => {
-        fetch('http://worldtimeapi.org/api/timezone/Europe/London')
-            .then(response => response.json())
-            .then((json) => {
-                console.log(json);
-                setData(json);
-            })
+        const fetchData = async () => {
+            const result = await fetch(URL)
+            const data = await result.json()
+            console.log(data);
+            setInfo(data);
+        }
+        fetchData();
     }, []);
-          
+
     
     return (
         <div>
