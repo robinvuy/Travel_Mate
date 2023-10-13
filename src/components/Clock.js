@@ -6,6 +6,7 @@ const Clock = () => {
     const [submit, setSubmit] = useState(false)
     const dateTime = info.datetime;
     const timeZone = info.timezone;
+    const utc = info.abbreviation;
     const URL = "http://worldtimeapi.org/api/timezone"
 
     useEffect(() => {
@@ -20,7 +21,7 @@ const Clock = () => {
             }
         }
             fetchData();
-    }, );
+    }, [submit, inputValue]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -64,7 +65,7 @@ const Clock = () => {
                 </form>
             
             
-            <p>Chosen Timezone is: {timeZone && timeZone}</p>
+            <p>Chosen Timezone is: {timeZone && timeZone} {utc && utc }</p>
             <p>time is: {dateTime && dateTime.slice(11,19)}</p>
             <p>date is: {dateTime && dateTime.slice(0,10)}</p>
         </div>
