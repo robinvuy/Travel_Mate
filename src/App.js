@@ -1,14 +1,16 @@
 import React from 'react';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from "./components/Home"
-import Clock from "./components/Clock"
+import Home from "./components/Home";
+import Clock from "./components/Clock";
+import Weather from "./components/Weather";
 
-  function App() {
+  function App() {  
     return (
       <Routes>
         <Route path="/" element={<Home />}  />
         <Route path="/clock" element={<Clock />} />
+        <Route path="/weather" element={<Weather />} />
       </Routes>
     );
       

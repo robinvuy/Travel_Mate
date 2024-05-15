@@ -7,7 +7,7 @@ const Clock = () => {
     const dateTime = info.datetime;
     const timeZone = info.timezone;
     const utc = info.abbreviation;
-    const URL = "http://worldtimeapi.org/api/timezone"
+    const URL = "https://worldtimeapi.org/api/timezone"
 
     useEffect(() => {
         const fetchData = async () => {

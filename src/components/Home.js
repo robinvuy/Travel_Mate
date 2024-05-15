@@ -7,7 +7,7 @@ const Home = () => {
         <p> This will provide all you need for your travels:</p>
         <ul> 
         <li><a href="/clock">Time and Date </a></li>
-        <li> Weather </li>
+        <li><a href="/weather">Weather </a></li>
         <li> Navigation and Maps </li>
         </ul>
     </div>  
