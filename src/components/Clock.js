@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Clock = () => {
     const [info, setInfo] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const [submit, setSubmit] = useState(false)
+    const [submit, setSubmit] = useState(false);
     const dateTime = info.datetime;
     const timeZone = info.timezone;
     const utc = info.abbreviation;
