@@ -7,7 +7,7 @@ const Clock = () => {
     const dateTime = info.datetime;
     const timeZone = info.timezone;
     const utc = info.abbreviation;
-    const URL = "https://worldtimeapi.org/api/timezone"
+    const URL = "https://worldtimeapi.org/api/timezone";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,29 +23,11 @@ const Clock = () => {
             fetchData();
     }, [submit, inputValue]);
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true)
-        // let inputValue = e.target.value
         console.log(inputValue);
-
-        // fetchData(`${inputValue}`);
-        // setInputValue(inputValue);
-        // console.log(inputValue)
-        // fetchData();
-
-        // const form = e.target;
-        // const formData = new FormData(form);
-        // const payload = Object.fromEntries(formData);
-        // console.log(payload.userInput); 
-        // const resultTwo = fetch(`${URL}/${payload.userInput}`)
-        // console.log(resultTwo);
-        // const dataTwo = resultTwo.json()
-        // console.log(dataTwo);
-    // resultTwo();    
     }
-    
-
     
     return (
         <div>
@@ -70,6 +52,6 @@ const Clock = () => {
             <p>date is: {dateTime && dateTime.slice(0,10)}</p>
         </div>
     );
-}
+};
 
 export default Clock;

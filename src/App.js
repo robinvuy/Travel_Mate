@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from "./components/Home";
-import Clock from "./components/Clock";
-import Weather from "./components/Weather";
+import Home from "./backend/components/Home";
+import Clock from "./backend/components/Clock";
+import Weather from "./backend/components/Weather";
 
   function App() {  
     return (
