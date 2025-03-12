@@ -1,9 +1,11 @@
 import React, { useEffect, useState} from "react";
+import Location from "./Location";
 
 const Weather = () => {
     const [info, setInfo] = useState(null);
     const [inputValue, setInputValue] = useState("");
     const [submit, setSubmit] = useState(false);
+    const [location, setLocation] = useState("");
     //const rain = info.current.temp_c;
     
     const URL = " http://api.weatherapi.com/v1";
@@ -11,14 +13,12 @@ const Weather = () => {
     
     useEffect(() => {
         const fetchData = async () => {
-            if (submit) {
                 const result = await fetch(`${URL}/current.json?key=${key}&q=${inputValue}`)
                 console.log(result)
                 const data = await result.json()
                 console.log(data);
                 setInfo(data);
                 setSubmit(false);
-            }
         }
             fetchData();
     }, [submit, inputValue]);
@@ -47,7 +47,21 @@ const Weather = () => {
                     />
                     <button type="submit">Submit</button>
                 </label>
+                <label> 
+                    Enter Location:
+                    <Location/> 
+                    
+                        
+                    <button type="submit">Submit</button>
+                </label>
+
             </form>
+
+            
+
+            
+
+            
 
         {info && info.current ? 
         <>
